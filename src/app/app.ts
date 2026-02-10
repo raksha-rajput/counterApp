@@ -8,5 +8,31 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('counterApp');
+  count=0;
+
+handleCount(val: string){
+if (val == 'minus') {
+  if(this.count>0){
+  this.count = this.count-1;
+  }
+
+} else if(val == 'plus') {
+  this.count = this.count+1;
+}
+else{
+  this.count=0;
+}
+}
+
+// increment(){
+//   this.count = this.count+1;
+// }
+
+// Decrement(){
+//   this.count = this.count-1;
+// }
+
+// resete(){
+//   this.count=0;
+// }
 }
